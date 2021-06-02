@@ -3,12 +3,13 @@ const showArticle = async (req, res, next) => {
   let Limit = parseInt(req.query?.limit);
   let page = parseInt(req.query?.page);
 
-
   let startIndex = (page - 1) * Limit;
-  let article=null
-  
+  let article = null;
+
   try {
-     article = await Article.find({}).limit(Limit).skip(startIndex);
+    article = await Article.find({})
+      .limit(Limit || 6)
+      .skip(startIndex || 0);
   } catch (e) {
     return res.json({ msg: "Some Error occurred" });
   }
@@ -25,7 +26,7 @@ const readMoreArticle = async (req, res) => {
   if (!articles)
     return res
       .status(404)
-      .json({ msg: "Article not Found,not to worry ,publish one" });
+      .json({ msg: "Article not Found,not to worry ,publish one 😊" });
 
   res.json(articles);
 };
