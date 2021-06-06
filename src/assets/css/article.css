@@ -1,0 +1,96 @@
+:root {
+  --radius: 0.4rem;
+}
+
+@font-face {
+  font-family: monsterMedium;
+  src: url("../fonts/Montserrat/Montserrat-Medium.ttf");
+}
+
+.article_container {
+  margin: 50px auto;
+  max-width: 85%;
+  display: -ms-grid;
+  display: grid;
+  gap: 2rem;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 320px;
+}
+
+@media (max-width: 900px) {
+  .article_container {
+    grid-auto-rows: 370px;
+  }
+}
+
+.article_container .card_body {
+  color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-box-shadow: 0px 5px 20px rgba(22, 45, 56, 0.3);
+          box-shadow: 0px 5px 20px rgba(22, 45, 56, 0.3);
+  background: linear-gradient(45deg, #181717, black);
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.article_container .card_body .card_image {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  width: 100%;
+  height: 50%;
+}
+
+.article_container .card_body .card_image img {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  width: 100%;
+  height: 100%;
+}
+
+.article_container .card_body .article_heading {
+  text-align: left;
+  font-family: monsterFont;
+  margin: 0.4rem 1rem;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.article_container .card_body .article_heading h5 {
+  font-weight: 100;
+}
+
+.article_container .card_body .article_content {
+  width: 93%;
+  font-family: monsterMedium;
+  margin: 0.4rem 1rem;
+}
+
+.article_container .card_body .article_content p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+
+.article_container .card_body .author_share {
+  font-family: monsterMedium;
+  margin-top: 0.9rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.article_container .card_body .author_share .author {
+  margin-left: 1rem;
+}
+
+.article_container .card_body .author_share .shareButton {
+  margin-right: 1rem;
+}
+/*# sourceMappingURL=article.css.map */

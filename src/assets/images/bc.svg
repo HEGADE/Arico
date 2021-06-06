@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="515.793" height="517.017" viewBox="0 0 515.793 517.017">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ef6c00;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-4 {
+        filter: url(#Ellipse_3);
+      }
+
+      .cls-5 {
+        filter: url(#Ellipse_2);
+      }
+
+      .cls-6 {
+        filter: url(#Path_3);
+      }
+    </style>
+    <filter id="Path_3" x="0" y="0" width="515.793" height="517.017" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="42.5" result="blur"/>
+      <feFlood flood-color="#819faa" flood-opacity="0.439"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00acff"/>
+      <stop offset="1" stop-color="#002b80"/>
+    </linearGradient>
+    <filter id="Ellipse_2" x="130.5" y="257.974" width="83" height="83" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fd2ec6"/>
+      <stop offset="1" stop-color="#80002f"/>
+    </linearGradient>
+    <filter id="Ellipse_3" x="213.5" y="293.974" width="89" height="89" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_5" data-name="Group 5" transform="translate(127.5 -430.5)">
+    <g class="cls-6" transform="matrix(1, 0, 0, 1, -127.5, 430.5)">
+      <path id="Path_3-2" data-name="Path 3" class="cls-1" d="M167,669.906s80.254,50.913,59.127,74.507c-2.345,2.619-20.335,8.024-20.1,11.434,1.644,24.549,83.483,54.38,83.483,54.38s72.984,24.836,65.3,58.364,72.984,63.331,72.984,63.331H167Z" transform="translate(-39.5 -542.41)"/>
+    </g>
+    <g class="cls-5" transform="matrix(1, 0, 0, 1, -127.5, 430.5)">
+      <circle id="Ellipse_2-2" data-name="Ellipse 2" class="cls-2" cx="23.5" cy="23.5" r="23.5" transform="translate(148.5 272.97)"/>
+    </g>
+    <g class="cls-4" transform="matrix(1, 0, 0, 1, -127.5, 430.5)">
+      <circle id="Ellipse_3-2" data-name="Ellipse 3" class="cls-3" cx="23.5" cy="23.5" r="23.5" transform="translate(234.5 311.97)"/>
+    </g>
+  </g>
+</svg>

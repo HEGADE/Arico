@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: monsterFont;
+    src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+}
+:root{
+    --body-bg:#0f162b;
+}
+body{
+
+    background: var(--body-bg);
+}
+.heading_arico{
+    color:white;
+    font-family: monsterFont;
+    border-bottom: 2px solid rgba(224, 255, 255, 0.246);
+    margin: 1.4rem;
+    padding-bottom: .8rem;
+    h2{
+        font-size: 1.5rem;
+        font-weight: lighter;
+    }
+}

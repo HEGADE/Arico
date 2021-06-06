@@ -1,0 +1,73 @@
+@font-face {
+  font-family: monsterFontMedium;
+  src: url("../fonts/Montserrat/Montserrat-Medium.ttf");
+}
+@font-face {
+  font-family: robotoFontItalic;
+  src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+.welcome_heading {
+  color: rgba(255, 255, 255, 0.8);
+  display: grid;
+  place-items: center;
+  margin-top: 2rem;
+  p {
+    font-family: monsterFontMedium;
+
+    line-height: 2.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    small {
+        text-transform: capitalize;
+      color: rgba(255, 255, 255, 0.4);
+      font-family: monsterFontMedium !important;
+    }
+  }
+}
+.auth_container {
+  font-family: monsterFont;
+  margin-top: 4rem;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  small {
+    cursor: pointer;
+    a {
+        
+      color: rgba(255, 255, 255, 0.4);
+     
+    }
+  }
+  .login,
+  .signup {
+    cursor: pointer;
+    filter: drop-shadow(0px 5px 8px rgba(29, 66, 231, 0.527));
+    border-radius: 0.2rem;
+    margin-bottom: 2.4rem;
+
+    padding: 1rem 9rem;
+    background-color: #0055ff;
+  }
+  .signup {
+    filter: drop-shadow(0px 5px 8px rgba(238, 2, 112, 0.527));
+    padding: 1rem 8.8rem !important;
+    background-color: #ff005e;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+.circle{
+ position: absolute;
+ bottom: 0;
+ background: linear-gradient(60deg ,blue , #ff005e,purple ) ;
+ width: 200px;
+ filter: drop-shadow(0px 5px 8px rgba(238, 2, 112, 0.527));
+
+ height: 200px;
+ border-radius: 50%;
+ margin-left: -5rem;
+}

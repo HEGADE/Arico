@@ -1,0 +1,77 @@
+:root {
+  --radius: 0.4rem;
+}
+@font-face {
+  font-family: monsterMedium;
+  src: url("../fonts/Montserrat/Montserrat-Medium.ttf");
+}
+.article_container {
+  margin: 50px auto;
+  max-width: 85%;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 320px;
+  @media (max-width: 900px) {
+    grid-auto-rows: 370px;
+  }
+  .card_body {
+    color: white;
+    width: fit-content;
+
+    box-shadow: 0px 5px 20px rgba(22, 45, 56, 0.3);
+    background: linear-gradient(45deg, rgb(24, 23, 23), black);
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    .card_image {
+      border-top-left-radius: var(--radius);
+      border-top-right-radius: var(--radius);
+
+      width: 100%;
+      height: 50%;
+      img {
+        border-top-left-radius: var(--radius);
+        border-top-right-radius: var(--radius);
+
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .article_heading {
+      text-align: left;
+      font-family: monsterFont;
+      margin: 0.4rem 1rem;
+               
+
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      h5 {
+
+        font-weight: 100;
+      }
+    }
+    .article_content {
+      width: 93%;
+      font-family: monsterMedium;
+      margin: 0.4rem 1rem;
+      p {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.8rem;
+        line-height: 1.8;
+      }
+    }
+    .author_share {
+      font-family: monsterMedium;
+      margin-top: 0.9rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .author {
+        margin-left: 1rem;
+      }
+      .shareButton {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
