@@ -12,6 +12,11 @@ route.get("/", auth,showArticle, (req, res) => {
   res.json({ msg: "Your Articles 🤞✌" });
 });
 
+//Route for profile of article creator..>
+route.get("/userProfile/:id", auth,profile.showProfileUser, (req, res) => {
+  res.json({ msg: "Your Articles 🤞✌" });
+});
+
 // Route for posting (creating) article..>
 route.put("/", auth, postingFeature, (req, res) => {
 

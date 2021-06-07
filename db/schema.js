@@ -2,6 +2,18 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 require("./connection");
 const Schema = mongoose.Schema
+const GuestSuperUser=mongoose.Schema({
+  ip:{
+    type:Number,
+    required:true,
+
+  },
+  uniqueId:{
+    type:String,
+    unique:true,
+    required:true
+  }
+})
 
 
 const schema = new mongoose.Schema({
@@ -10,6 +22,7 @@ const schema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+
   name: {
     type: String,
   },

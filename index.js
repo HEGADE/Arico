@@ -13,10 +13,10 @@ app.use("/api", route);
 
 // For invalid routes..>
 app.get("/*", (req, res) => {
-  res.status(404).json({ msg: "Page not found 😒" });
+  res.status(404).json({ msg: "Page not found.. 😒" });
 });
 
 app.listen(
   8000,
-  console.log("Running at 🚀🚀🚀 " + "http://localhost:" + port)
+  console.log("Running at 🚀🚀🚀  " + "http://localhost:" + port)
 );

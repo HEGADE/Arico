@@ -2,14 +2,19 @@ const { Article } = require("../../db/schema");
 const showArticle = async (req, res, next) => {
   let Limit = parseInt(req.query?.limit);
   let page = parseInt(req.query?.page);
+  let searchQuery = req.query?.search;
 
   let startIndex = (page - 1) * Limit;
   let article = null;
+  let searchAble={}
+
+
 
   try {
     article = await Article.find({})
       .limit(Limit || 6)
-      .skip(startIndex || 0);
+      .skip(startIndex || 0)
+      .sort("createdDate");
   } catch (e) {
     return res.json({ msg: "Some Error occurred" });
   }
@@ -30,6 +35,7 @@ const readMoreArticle = async (req, res) => {
 
   res.json(articles);
 };
+
 module.exports = {
   showArticle,
   readMoreArticle,

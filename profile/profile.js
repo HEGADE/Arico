@@ -29,6 +29,14 @@ class ProfileHandler {
       return res.status(500).json({ msg: "Unable to update!" });
     }
   }
+  async showProfileUser(req, res) {
+    let followers, following, name, articleCount;
+    const userData = await User.findOne({ _id: req.params.id });
+    following = userData.following.length;
+    followers = userData.followers.length;
+    name = userData.name;
+    res.json({ followers, name, following });
+  }
 }
 
 module.exports = new ProfileHandler();
