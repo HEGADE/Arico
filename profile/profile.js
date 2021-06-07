@@ -12,6 +12,7 @@ class ProfileHandler {
     res.json({ followers, name, following, userName, articleCount });
   }
   async update(req, res) {
+    console.log(req.file);
     if (req.body.name?.length < 4)
       return res
         .status(406)
@@ -20,7 +21,10 @@ class ProfileHandler {
     try {
       const updated = await User.updateOne(
         { userName: req.user },
-        { $set: { name: req.body.name || "Hacker dude" } }
+        {
+          $set: { name: req.body.name || "Hacker dude" },
+          pic: `static/${req.file.filename}`,
+        }
       );
       console.log(updated);
       return res.json({ msg: "Updated successfully!" });

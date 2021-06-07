@@ -46,6 +46,9 @@ const schema = new mongoose.Schema({
       type: String,
     },
   ],
+  pic:{
+    type:String
+  }
  
 });
 const ArticleSchema = new mongoose.Schema({
