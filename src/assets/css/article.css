@@ -93,4 +93,73 @@
 .article_container .card_body .author_share .shareButton {
   margin-right: 1rem;
 }
+
+.login_container {
+  margin: 26vh auto;
+  font-family: monsterMedium;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 80vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login_container input {
+  color: white;
+  background: #000000;
+  border: 2px solid #5F80DC;
+  margin: .7rem;
+  width: 90%;
+  border-radius: .2rem;
+  padding: .8rem .4rem;
+}
+
+.login_container input::-webkit-input-placeholder {
+  font-family: monsterMedium;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.login_container input:-ms-input-placeholder {
+  font-family: monsterMedium;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.login_container input::-ms-input-placeholder {
+  font-family: monsterMedium;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.login_container input::placeholder {
+  font-family: monsterMedium;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.login_container label {
+  font-weight: 200;
+  color: white;
+  width: 90%;
+}
+
+.login_container button {
+  cursor: pointer;
+  color: white;
+  font-family: monsterMedium;
+  border: none;
+  padding: .7rem 6rem;
+  margin: 1rem;
+  border-radius: .2rem;
+  background: #FF005E;
+  -webkit-filter: drop-shadow(0px 4px 5px rgba(255, 0, 94, 0.5));
+          filter: drop-shadow(0px 4px 5px rgba(255, 0, 94, 0.5));
+}
 /*# sourceMappingURL=article.css.map */

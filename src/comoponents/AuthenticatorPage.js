@@ -2,8 +2,14 @@ import React from "react";
 import ArcioHeading from "../commomComponets/Heading";
 import "../assets/css/auth.css";
 import { Link } from "react-router-dom";
-const AuthenticatorPage = () => (
-  <>
+import {LocalStorage} from "../helper/localStorage"
+const AuthenticatorPage = () =>{
+
+ let  storage =new LocalStorage()
+ storage.setItem("hha")
+  
+ return (
+    <>
     <ArcioHeading />
 
     <div className="welcome_heading">
@@ -13,12 +19,14 @@ const AuthenticatorPage = () => (
       </p>
     </div>
     <div className="auth_container">
+    <Link to="/login">
       <div className="login">
-        <Link to="/login">Login</Link>
-      </div>
+       Login
+      </div></Link> <Link to="/Signup">
       <div className="signup">
-        <Link to="/Signup">Signup</Link>
+      Signup
       </div>
+     </Link>
       <small>
         <Link to="/terms">Terms and Conditions</Link>
       </small>
@@ -26,5 +34,6 @@ const AuthenticatorPage = () => (
     <div className="circle"></div>
   </>
 );
+}
 
 export default AuthenticatorPage;

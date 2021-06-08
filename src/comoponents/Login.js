@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
+import Header from "../commomComponets/Heading"
 
 const Login = () => {
-    return (
-        <div>
-            <h2>login</h2>
-        </div>
-    )
-}
+  return (
+    <>
+    <Header/>
+      <div className="login_container">
+      <label > username</label>
+        <input type="text" placeholder="username" />
+        <label > password</label>
 
-export default Login
+        <input type="password" placeholder="password" />
+        <button> Login</button>
+      </div>
+    </>
+  );
+};
+
+export default Login;
