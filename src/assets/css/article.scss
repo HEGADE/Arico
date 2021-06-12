@@ -18,9 +18,8 @@
   .card_body {
     color: white;
     width: fit-content;
+    // box-shadow: 0px 5px 10px rgba(160, 158, 159, 0.2);
 
-    box-shadow: 0px 5px 20px rgba(22, 45, 56, 0.3);
-    background: linear-gradient(45deg, rgb(24, 23, 23), black);
     border-top-left-radius: var(--radius);
     border-top-right-radius: var(--radius);
     .card_image {
@@ -53,7 +52,7 @@
       font-family: monsterMedium;
       margin: 0.4rem 1rem;
       p {
-        color: rgba(255, 255, 255, 0.4);
+        color: rgba(255, 255, 255, 0.7);
         font-size: 0.8rem;
         line-height: 1.8;
       }
@@ -65,7 +64,10 @@
       display: flex;
       justify-content: space-between;
       .author {
+        border-radius: 0.1rem;
         margin-left: 1rem;
+        padding: 0.2rem 0.4rem;
+        background: rgba(0, 0, 0, 0.4);
       }
       .shareButton {
         margin-right: 1rem;
@@ -73,8 +75,18 @@
     }
   }
 }
+.login_header {
+  font-size: 2.3rem;
+  font-family: monsterMedium;
+  color: white;
+  text-align: center;
+}
 .login_container {
-  margin :26vh auto;
+  filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.459));
+  padding: 1rem;
+  border-radius: 0.4rem;
+  background-color: #000000;
+  margin: 16vh auto;
   font-family: monsterMedium;
   display: flex;
   max-width: 80vh; // intensionally used vh here
@@ -82,36 +94,99 @@
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  input{
+  @media (max-width: 806px) {
+    margin: 16vh 1rem;
+  }
+  input {
     color: white;
     background: #000000;
-    border: 2px solid #5F80DC;
-    margin: .7rem;
+    border: 2px solid #5f80dc;
+    margin: 0.7rem;
     width: 90%;
-    border-radius: .2rem;
+    border-radius: 0.2rem;
 
-    padding: .8rem .4rem;
-    &::placeholder{
+    padding: 0.8rem 0.4rem;
+    &::placeholder {
       font-family: monsterMedium;
 
       color: hsla(0, 0%, 100%, 0.3);
-      
     }
   }
-  label{
+  label {
     font-weight: 200;
     color: white;
     width: 90%;
   }
-  button{
+  button {
+    font-size: large;
     cursor: pointer;
     color: white;
     font-family: monsterMedium;
     border: none;
-    padding: .7rem 6rem;
+    padding: 0.7rem 6rem;
     margin: 1rem;
-    border-radius: .2rem;
-    background: #FF005E;
+    border-radius: 0.2rem;
+    background: #ff005e;
     filter: drop-shadow(0px 4px 5px hsla(338, 100%, 50%, 0.5));
   }
+}
+.signup_container {
+  filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.459));
+  padding: 1.3rem;
+  border-radius: 0.4rem;
+  background-color: hsla(0, 0%, 0%, 0.4);
+  font-family: monsterMedium;
+  margin: 50px auto;
+  max-width: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @media (max-width: 806px) {
+    margin: 16vh 1rem;
+  }
+  label {
+    width: 90%;
+    color: white;
+  }
+  input {
+    color: white;
+    background: #000000;
+    border: 2px solid #5f80dc;
+    margin: 0.7rem;
+    width: 90%;
+    border-radius: 0.2rem;
+
+    padding: 0.8rem 0.4rem;
+    &::placeholder {
+      font-family: monsterMedium;
+
+      color: hsla(0, 0%, 100%, 0.3);
+    }
+  }
+  button {
+    font-size: large;
+    cursor: pointer;
+    color: white;
+    font-family: monsterMedium;
+    border: none;
+    padding: 0.7rem 6rem;
+    margin: 1rem;
+    border-radius: 0.2rem;
+    background: #0077ff;
+    filter: drop-shadow(0px 0px 5px hsla(202, 100%, 50%, 0.5));
+  }
+}
+.custom_msg{
+  font-family: monsterMedium;
+  border-radius: .2rem;
+  margin: 10px auto;
+  max-width: 75vh;
+  padding: .8rem;
+  display: grid;
+  place-items: center;
+  @media (max-width: 806px) {
+    margin: 10px 1rem;
+  }
+
 }

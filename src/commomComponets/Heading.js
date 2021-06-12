@@ -1,14 +1,13 @@
-import React from 'react'
+import React from "react";
 
-const  Heading = () => {
-    return (
-        <>
-            <div className="heading_arico">
+const Heading = () => {
+  return (
+    <>
+      <div className="heading_arico">
+        <h2>Arico</h2>
+      </div>
+    </>
+  )
+};
 
-                <h2>Arico</h2>
-            </div>
-        </>
-    )
-}
-
-export default Heading
+export default Heading;

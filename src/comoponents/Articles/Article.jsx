@@ -1,31 +1,31 @@
 import React from "react";
 
-const Article = ({img,heading,articleContent}) => {
-  const share = async() => {
-  
-    if(navigator.canShare){
-      alert(
-      
-        'vjh'
-      )
-        navigator.share({
-        files:[],
-        text:"ninja is the best",
-        title:"ninja",
-        url:"dfvlkdflk"
-
-      }).then(()=>{
-        console.log("shared");
-      }).catch(e=>{
-        console.log(e);
-      })
-      
+const Article = ({ img, user,heading, articleContent ,determineColor}) => {
+  const bg={
+  "background": `linear-gradient(193deg,  ${determineColor},22%, #304569)`
+  }
+  const share = async () => {
+   
+    if (navigator.canShare) {
+      navigator
+        .share({
+          files: [],
+          text: "ninja is the best",
+          title: "ninja",
+          url: "dfvlkdflk",
+        })
+        .then(() => {
+          console.log("shared");
+        })
+        .catch((e) => {
+          console.log(e);
+        });
     }
-    
   };
+
   return (
     <>
-      <div className="card_body">
+      <div className="card_body" style={bg}>
         <div className="card_image">
           <img src="logo192.png" alt="article_image" />
         </div>
@@ -34,12 +34,11 @@ const Article = ({img,heading,articleContent}) => {
         </div>
         <div className="article_content">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-            laudantium sed assumenda...
+          {articleContent}
           </p>
         </div>
         <div className="author_share">
-          <small className="author">Ninja</small>
+          <small className="author">{user}</small>
           <small className="shareButton" onClick={share}>
             Share
           </small>

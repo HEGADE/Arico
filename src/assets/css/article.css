@@ -29,9 +29,6 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-box-shadow: 0px 5px 20px rgba(22, 45, 56, 0.3);
-          box-shadow: 0px 5px 20px rgba(22, 45, 56, 0.3);
-  background: linear-gradient(45deg, #181717, black);
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
 }
@@ -69,7 +66,7 @@
 }
 
 .article_container .card_body .article_content p {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.8rem;
   line-height: 1.8;
 }
@@ -87,15 +84,30 @@
 }
 
 .article_container .card_body .author_share .author {
+  border-radius: 0.1rem;
   margin-left: 1rem;
+  padding: 0.2rem 0.4rem;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .article_container .card_body .author_share .shareButton {
   margin-right: 1rem;
 }
 
+.login_header {
+  font-size: 2.3rem;
+  font-family: monsterMedium;
+  color: white;
+  text-align: center;
+}
+
 .login_container {
-  margin: 26vh auto;
+  -webkit-filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.459));
+  padding: 1rem;
+  border-radius: 0.4rem;
+  background-color: #000000;
+  margin: 16vh auto;
   font-family: monsterMedium;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -114,14 +126,20 @@
           align-items: center;
 }
 
+@media (max-width: 806px) {
+  .login_container {
+    margin: 16vh 1rem;
+  }
+}
+
 .login_container input {
   color: white;
   background: #000000;
-  border: 2px solid #5F80DC;
-  margin: .7rem;
+  border: 2px solid #5f80dc;
+  margin: 0.7rem;
   width: 90%;
-  border-radius: .2rem;
-  padding: .8rem .4rem;
+  border-radius: 0.2rem;
+  padding: 0.8rem 0.4rem;
 }
 
 .login_container input::-webkit-input-placeholder {
@@ -151,15 +169,112 @@
 }
 
 .login_container button {
+  font-size: large;
   cursor: pointer;
   color: white;
   font-family: monsterMedium;
   border: none;
-  padding: .7rem 6rem;
+  padding: 0.7rem 6rem;
   margin: 1rem;
-  border-radius: .2rem;
-  background: #FF005E;
+  border-radius: 0.2rem;
+  background: #ff005e;
   -webkit-filter: drop-shadow(0px 4px 5px rgba(255, 0, 94, 0.5));
           filter: drop-shadow(0px 4px 5px rgba(255, 0, 94, 0.5));
+}
+
+.signup_container {
+  -webkit-filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.459));
+  padding: 1.3rem;
+  border-radius: 0.4rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: monsterMedium;
+  margin: 50px auto;
+  max-width: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 806px) {
+  .signup_container {
+    margin: 16vh 1rem;
+  }
+}
+
+.signup_container label {
+  width: 90%;
+  color: white;
+}
+
+.signup_container input {
+  color: white;
+  background: #000000;
+  border: 2px solid #5f80dc;
+  margin: 0.7rem;
+  width: 90%;
+  border-radius: 0.2rem;
+  padding: 0.8rem 0.4rem;
+}
+
+.signup_container input::-webkit-input-placeholder {
+  font-family: monsterMedium;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.signup_container input:-ms-input-placeholder {
+  font-family: monsterMedium;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.signup_container input::-ms-input-placeholder {
+  font-family: monsterMedium;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.signup_container input::placeholder {
+  font-family: monsterMedium;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.signup_container button {
+  font-size: large;
+  cursor: pointer;
+  color: white;
+  font-family: monsterMedium;
+  border: none;
+  padding: 0.7rem 6rem;
+  margin: 1rem;
+  border-radius: 0.2rem;
+  background: #0077ff;
+  -webkit-filter: drop-shadow(0px 0px 5px rgba(0, 162, 255, 0.5));
+          filter: drop-shadow(0px 0px 5px rgba(0, 162, 255, 0.5));
+}
+
+.custom_msg {
+  font-family: monsterMedium;
+  border-radius: .2rem;
+  margin: 10px auto;
+  max-width: 75vh;
+  padding: .8rem;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 806px) {
+  .custom_msg {
+    margin: 10px 1rem;
+  }
 }
 /*# sourceMappingURL=article.css.map */

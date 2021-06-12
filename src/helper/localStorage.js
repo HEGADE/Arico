@@ -1,16 +1,16 @@
-class LocalStorage  {
-    
-constructor(){
-    this.key="auth-token"
+class LocalStorage {
+  constructor() {
+    this.key = "auth-token";
+  }
+  static getItem() {
+    let token = localStorage.getItem("auth-token");
+    return token;
+  }
+  static setItem(value) {
+    localStorage.setItem("auth-token", value);
+  }
+  static remove(){
+    localStorage.removeItem("auth-token")
+  }
 }
-getItem(){
-    let token=localStorage.getItem(this.key)
-    return token
-}
-setItem(value){
-    localStorage.setItem(this.key,value)
-}
-
-
-}
-export { LocalStorage}
+export{ LocalStorage};
