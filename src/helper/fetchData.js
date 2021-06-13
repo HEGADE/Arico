@@ -6,7 +6,7 @@ export const fetchData = async () => {
   let _token = LocalStorage.getItem();
   config.headers["auth"] = _token;
   let data = await axios.get("http://localhost:8000/api", config);
-  if(data?.code===-1){
+  if (data.data?.code === -1) {
     console.log("not authorized");
   }
   return data;

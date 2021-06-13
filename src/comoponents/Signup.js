@@ -4,51 +4,65 @@ import { authC } from "../store/SignupContext";
 import Heading from "../commomComponets/Heading";
 import { Msg } from "../commomComponets/Msg";
 import { LocalStorage } from "../helper/localStorage";
+import { _isAuthenticated, isAuthenticated } from "../helper/isAuthenticated";
 
 const Signup = () => {
-  const { signup, isLog, setIsLogg } = useContext(authC);
+  const { signup, isLog, setIsLogg, loadingHandler, loading } =
+    useContext(authC);
   const [_isLog, setIsLog] = useState(false);
   const [_token, setToken] = useState("");
-  const [loading, setloading] = useState("Signup");
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [cPassword, setCPassword] = useState("");
   const [_msg, setMsg] = useState(null);
-  const submit = async (e) => {
-    e.preventDefault();
-    e.target.style.background = "gray";
+  const [isAuthenticatedUser, setAuthenticated] = useState(false);
 
-    setloading("Loading..");
-    function bgChanger() {
-      e.target.style.background = "#0077ff";
-      setloading("Signup");
-    }
-    e.target.style.background = "grey";
-    signup(username, name, email, password, cPassword)
-      .then(({ msg, token }) => {
-        setMsg(msg);
-
-        setToken(token);
-        if (token) {
-          LocalStorage.setItem(token);
-          setIsLogg(true);
-          setIsLog(true);
+  useEffect(() => {
+    isAuthenticated()
+      .then((data) => {
+        if (!data) {
+          setAuthenticated(true);
         }
-
-        bgChanger();
       })
       .catch((e) => {
-        console.log(e);
-        setMsg("Network error");
-        bgChanger();
+        alert("some error occurred");
       });
+  }, []);
+  const submit = async (e) => {
+    let Button = e;
+    Button.preventDefault();
+    loadingHandler(Button, "gray", true);
+
+    try {
+      let { msg, token } = await signup(
+        username,
+        name,
+        email,
+        password,
+        cPassword
+      );
+      setMsg(msg);
+      if (token) {
+        LocalStorage.setItem(token);
+        setMsg("User Created");
+        setIsLogg(true);
+        setIsLog(true);
+        setTimeout(() => {
+          setAuthenticated(true);
+        }, 1000);
+      }
+      loadingHandler(Button, "#0077ff", false);
+    } catch (e) {
+      setMsg("Network error please try again");
+      loadingHandler(Button, "#0077ff", false);
+    }
   };
 
   return (
     <>
-      {_isLog && <Redirect to="/" />}
+      {isAuthenticatedUser && <Redirect to="/" />}
 
       <Heading />
       {_msg && <Msg msg={_msg} bgColor={!_token ? "red" : "green"} />}
@@ -92,7 +106,7 @@ const Signup = () => {
           value={cPassword}
           onChange={(e) => setCPassword(e.target.value)}
         />
-        <button onClick={submit}>{loading}</button>
+        <button onClick={submit}> {loading ? "Loading" : "Login"}</button>
       </dir>
     </>
   );

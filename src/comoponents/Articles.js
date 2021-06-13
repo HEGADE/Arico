@@ -7,18 +7,17 @@ import { authC } from "../store/SignupContext";
 import { fetchData } from "../helper/fetchData";
 
 const Articles = () => {
-  let { isLog,setIsLogg } = useContext(authC);
+  let { isLog, setIsLogg } = useContext(authC);
   let [articles, setArticles] = useState([]);
 
   useEffect(() => {
     fetchData()
       .then((data) => {
-        if(data.data?.code===-1){
-          setIsLogg(false)
+        if (data.data?.code === -1) {
+          setIsLogg(false);
           console.log("iam running");
-
         }
-        if(data.data[0]?.article){
+        if (data.data[0]?.article) {
           console.log(true);
 
           setArticles((pre) => [...pre, ...data?.data]);
@@ -30,11 +29,9 @@ const Articles = () => {
       });
   }, []);
 
-   
-  
   return (
     <>
-    {!isLog && <Redirect to="/login" />}
+      {!isLog && <Redirect to="/login" />}
       <Heading />
 
       <div className="article_container">

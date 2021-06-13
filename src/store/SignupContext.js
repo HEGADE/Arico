@@ -6,6 +6,7 @@ import { LocalStorage } from "../helper/localStorage";
 export const authC = createContext();
 export const SignupContext = ({ children }) => {
   const [isLog, setIsLogg] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [token, setToken] = useState("");
 
   const signup = async (username, name, email, password, cPassword) => {
@@ -37,5 +38,22 @@ export const SignupContext = ({ children }) => {
 
     return { msg: data.data.msg, token: data.data.token };
   };
-  return <authC.Provider value={{ signup,isLog, setIsLogg }}>{children}</authC.Provider>;
+  const login=async(username,password)=>{
+    const body = {
+      username,
+      password,
+    };
+    let data = await axios.post(
+      "http://localhost:8000/api/login/",
+      JSON.stringify(body),
+      config
+    );
+    return data
+  }
+  const loadingHandler=(e,bgColor,boolean)=>{
+    e.target.style.background=bgColor
+    setLoading(boolean)
+
+  }
+  return <authC.Provider value={{ signup,isLog, setIsLogg,login,loadingHandler,loading }}>{children}</authC.Provider>;
 };

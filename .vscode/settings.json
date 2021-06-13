@@ -1,4 +1,7 @@
 {
     "editor.fontLigatures": true,
-    "editor.lineHeight": 20
+    "editor.lineHeight": 20,
+    "cSpell.words": [
+        "setloading"
+    ]
 }
