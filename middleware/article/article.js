@@ -11,7 +11,14 @@ const showArticle = async (req, res, next) => {
 
 
   try {
-    article = await Article.find({})
+    article = await Article.aggregate([
+      {
+        $project:{
+          article:{$substr:["$article",0,120]}
+        }
+      }
+      
+    ])
       .limit(Limit || 6)
       .skip(startIndex || 0)
       .sort("createdDate");
