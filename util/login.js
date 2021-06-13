@@ -18,13 +18,13 @@ module.exports = async (req, res, next) => {
       return next();
     } else {
       req.msg = "invalid credentials";
-      req.code = 406;
+      req.code = 200;
       console.log("invalid credentials");
       return next();
     }
   } else {
     req.msg = "invalid credentials";
-    req.code = 406;
+    req.code = 200;
 
     console.log("Invalid credentials");
     return next();

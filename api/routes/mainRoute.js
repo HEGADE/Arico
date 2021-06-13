@@ -77,4 +77,8 @@ route.put("/profile", auth, upload.single("pic"), profile.update)
 // Route for viewing article based on id
 route.get("article/:id", readMoreArticle)
 
+route.get("/isauthenticated", auth,(req,res)=>{
+  res.json({ha:"ha"})
+})
+
 module.exports = route;

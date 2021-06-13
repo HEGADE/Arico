@@ -7,7 +7,7 @@ module.exports = async (username, name, password, email) => {
   let token = null;
   console.log(username, name, password, email)
   if (await _userChecker(username))
-    return { msg: "User already Exits!", status: 406, token };
+    return { msg: "User already Exits!", status: 200, token };
   token = await _tokenCreator(username);
   try {
     let dataToSave = new User({
@@ -22,7 +22,8 @@ module.exports = async (username, name, password, email) => {
     let actualError = e.message.split(":")[2];
     if (e.code == 11000) actualError = "Email already Exits!";
 
-    return { msg: actualError, status: 406, token };
+    return { msg: actualError, status: 200, token };
   }
   return { msg: "User Created", status: 201, token };
+  
 };

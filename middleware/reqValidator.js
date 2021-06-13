@@ -18,7 +18,7 @@ const reqValidatorLogin=(req,res,next)=>{
 
   )
     return res
-      .status(406)
+      .status(200)
       .json({ msg: "Password and username must be 5 character long" });
     return next()
 }
