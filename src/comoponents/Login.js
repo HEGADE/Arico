@@ -11,50 +11,50 @@ const Login = () => {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [_token, setToken] = useState("");
-
   const { setIsLogg, login, loadingHandler, loading } = useContext(authC);
   const [_msg, setMsg] = useState(null);
 
-  const submit = async (e) => {
-    e.preventDefault();
-    loadingHandler(e, "gray", true);
+  useEffect(() => { // login checker function
+    isAuthenticated()
+      .then((data) => {
+        if (!data) setAuthenticated(true);
+      })
+      .catch((e) => {
+        setMsg("Some error occurred");
+      });
+  }, []);
+
+  const submit = async (e) => {// logger Function
+    let Button = e;
+    Button.preventDefault();
+    loadingHandler(Button, "gray", true);
     try {
       let data = await login(username, password);
-      console.log(data);
       setMsg(data?.data?.msg);
-      loadingHandler(e, "#ff005e", false);
+      loadingHandler(Button, "#ff005e", false);
       if (data?.data?.token) {
         LocalStorage.setItem(data?.data?.token);
         setToken(data?.data?.token);
-
         setIsLogg(true);
+
         setTimeout(() => {
           setAuthenticated(true);
         }, 1000);
       }
     } catch (e) {
-      alert("some network error");
+      setMsg("Some network error");
+      loadingHandler(Button, "#ff005e", false);
     }
   };
-  useEffect(() => {
-    isAuthenticated()
-      .then((data) => {
-        if (!data) {
-          setAuthenticated(true);
-        }
-      })
-      .catch((e) => {
-        alert("Some error occurred");
-      });
-  }, []);
+ 
   document.title = "Login";
   if (isAuthenticatedUser) return <Redirect to="/" />;
   else
     return (
       <>
         <Header />
-        {_msg && <Msg msg={_msg} bgColor={!_token ? "red" : "green"} />}
         <div className="login_header">Login</div>
+        {_msg && <Msg msg={_msg} bgColor={!_token ? "red" : "green"} />}
         <div className="login_container">
           <label> username</label>
           <input
@@ -70,7 +70,7 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button onClick={submit}> {loading ? "Loading" : "Login"}</button>
+          <button onClick={submit}> {loading ? "Loading.." : "Login"}</button>
         </div>
       </>
     );

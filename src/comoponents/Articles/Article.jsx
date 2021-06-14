@@ -1,11 +1,10 @@
 import React from "react";
 
-const Article = ({ img, user,heading, articleContent ,determineColor}) => {
-  const bg={
-  "background": `linear-gradient(193deg,  ${determineColor},22%, #304569)`
-  }
+const Article = ({ img, user, heading, articleContent, determineColor }) => {
+  const bg = {
+    background: `linear-gradient(193deg,  ${determineColor},22%, #304569)`,
+  };
   const share = async () => {
-   
     if (navigator.canShare) {
       navigator
         .share({
@@ -33,9 +32,7 @@ const Article = ({ img, user,heading, articleContent ,determineColor}) => {
           <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit</h5>
         </div>
         <div className="article_content">
-          <p>
-          {articleContent}
-          </p>
+          <p>{articleContent}</p>
         </div>
         <div className="author_share">
           <small className="author">{user}</small>

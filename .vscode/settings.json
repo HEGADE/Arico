@@ -2,6 +2,10 @@
     "editor.fontLigatures": true,
     "editor.lineHeight": 20,
     "cSpell.words": [
+        "Componets",
+        "Logg",
+        "commom",
+        "comoponents",
         "setloading"
     ]
 }

@@ -30,4 +30,17 @@ body {
   font-size: 1.5rem;
   font-weight: lighter;
 }
+
+#loader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
 /*# sourceMappingURL=global.css.map */

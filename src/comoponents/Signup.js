@@ -43,6 +43,7 @@ const Signup = () => {
         password,
         cPassword
       );
+      
       setMsg(msg);
       if (token) {
         LocalStorage.setItem(token);

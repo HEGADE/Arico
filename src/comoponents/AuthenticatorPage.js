@@ -2,12 +2,10 @@ import React from "react";
 import ArcioHeading from "../commomComponets/Heading";
 import "../assets/css/auth.css";
 import { Link } from "react-router-dom";
-import { LocalStorage } from "../helper/localStorage";
 const AuthenticatorPage = () => {
   return (
     <>
       <ArcioHeading />
-
       <div className="welcome_heading">
         <p>
           Welcome to Arico,

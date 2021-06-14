@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import Article from "./Articles/Article";
-import "../assets/css/article.css";
 import Heading from "../commomComponets/Heading";
 import { authC } from "../store/SignupContext";
 import { fetchData } from "../helper/fetchData";
@@ -9,23 +8,20 @@ import { fetchData } from "../helper/fetchData";
 const Articles = () => {
   let { isLog, setIsLogg } = useContext(authC);
   let [articles, setArticles] = useState([]);
-
   useEffect(() => {
     fetchData()
       .then((data) => {
         if (data.data?.code === -1) {
           setIsLogg(false);
-          console.log("iam running");
+          // console.log("iam running");
         }
         if (data.data[0]?.article) {
-          console.log(true);
-
           setArticles((pre) => [...pre, ...data?.data]);
         }
         console.log(data);
       })
       .catch((e) => {
-        console.log(e);
+        alert("Slow network detected..,pls try again later");
       });
   }, []);
 
@@ -33,7 +29,6 @@ const Articles = () => {
     <>
       {!isLog && <Redirect to="/login" />}
       <Heading />
-
       <div className="article_container">
         {articles.map((ele, index) => {
           return (
