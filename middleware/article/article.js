@@ -14,6 +14,8 @@ const showArticle = async (req, res, next) => {
     article = await Article.aggregate([
       {
         $project:{
+          title:1,
+          user:1,
           article:{$substr:["$article",0,120]}
         }
       }
