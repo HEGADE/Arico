@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @font-face {
@@ -11,7 +11,7 @@
 }
 
 :root {
-  --body-bg:#0f162b;
+  --body-bg: #0f162b;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
   font-family: monsterFont;
   border-bottom: 2px solid rgba(224, 255, 255, 0.246);
   margin: 1.4rem;
-  padding-bottom: .8rem;
+  padding-bottom: 0.8rem;
 }
 
 .heading_arico h2 {
@@ -32,15 +32,27 @@ body {
 }
 
 #loader {
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100vh;
+}
+
+.wrapper {
+  padding: 0.8rem 1rem;
+  border-radius: 50%;
+  -webkit-filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.377));
+  filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.377));
+  width: 70px;
+  height: 70px;
+  background-color: #123044;
 }
 /*# sourceMappingURL=global.css.map */

@@ -16,7 +16,10 @@ export default function CircularIndeterminate() {
 
   return (
     <div id="loader" className={classes.root}>
+    <div className="wrapper">
+
       <CircularProgress color="secondary" />
+    </div>
     </div>
   );
 }

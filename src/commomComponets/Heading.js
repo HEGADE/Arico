@@ -7,7 +7,7 @@ const Heading = () => {
         <h2>Arico</h2>
       </div>
     </>
-  )
+  );
 };
 
 export default Heading;

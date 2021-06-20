@@ -1,20 +1,21 @@
 import React, { lazy, Suspense } from "react";
 import CircularIndeterminate from "./commomComponets/Loader";
 import { Route, Switch, BrowserRouter as Router, Link } from "react-router-dom";
+import { ReadMore } from "./pages/ReadMore";
 const Articles = lazy(() => {
-  return import("./comoponents/Articles");
+  return import("./pages/Articles");
 });
 const Login = lazy(() => {
-  return import("./comoponents/Login");
+  return import("./pages/Login");
 });
 const Signup = lazy(() => {
-  return import("./comoponents/Signup");
+  return import("./pages/Signup");
 });
 const Terms = lazy(() => {
-  return import("./comoponents/terms");
+  return import("./pages/terms");
 });
 const AuthPage = lazy(() => {
-  return import("./comoponents/AuthenticatorPage");
+  return import("./pages/AuthenticatorPage");
 });
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route exact path="/terms" component={Terms} />
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Signup" component={Signup} />
+            <Route exact path="/readmore" component={ReadMore} />
           </Switch>
         </Suspense>
       </Router>

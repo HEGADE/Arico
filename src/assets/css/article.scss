@@ -1,23 +1,33 @@
 :root {
   --radius: 0.4rem;
 }
+a {
+  text-decoration: none;
+  color: white;
+}
 @font-face {
   font-family: monsterMedium;
   src: url("../fonts/Montserrat/Montserrat-Medium.ttf");
 }
 .article_container {
+  cursor: pointer;
+  padding: 1rem;
+
   margin: 50px auto;
   max-width: 85%;
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-auto-rows: 320px;
+  grid-auto-rows: auto;
   @media (max-width: 900px) {
-    grid-auto-rows: 370px;
+    max-width: 95%;
+    grid-auto-rows: max-content;
   }
   .card_body {
     color: white;
-    width: fit-content;
+    width: 100%;
+    height: max-content;
+    padding-bottom: 0.4rem;
     // box-shadow: 0px 5px 10px rgba(160, 158, 159, 0.2);
 
     border-top-left-radius: var(--radius);
@@ -27,7 +37,7 @@
       border-top-right-radius: var(--radius);
 
       width: 100%;
-      height: 50%;
+      height: 40%;
       img {
         border-top-left-radius: var(--radius);
         border-top-right-radius: var(--radius);
@@ -59,17 +69,19 @@
     }
     .author_share {
       font-family: monsterMedium;
-      margin-top: 0.9rem;
+      // margin-top: 1.2rem;
       width: 100%;
       display: flex;
       justify-content: space-between;
       .author {
+        margin-top: 1rem;
         border-radius: 0.1rem;
         margin-left: 1rem;
         padding: 0.2rem 0.4rem;
         background: rgba(0, 0, 0, 0.4);
       }
       .shareButton {
+        margin-top: 1rem;
         margin-right: 1rem;
       }
     }
@@ -89,13 +101,13 @@
   margin: 16vh auto;
   font-family: monsterMedium;
   display: flex;
-  max-width: 80vh; // intensionally used vh here
+  max-width: 80vh; // intensionally used vh here do not judge me
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
   align-items: center;
   @media (max-width: 806px) {
-    margin: 16vh 1rem;
+    margin: 14vh 1rem;
   }
   input {
     color: white;
@@ -177,18 +189,17 @@
     filter: drop-shadow(0px 0px 5px hsla(202, 100%, 50%, 0.5));
   }
 }
-.custom_msg{
+.custom_msg {
   color: white;
 
   font-family: monsterMedium;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   margin: 10px auto;
   max-width: 75vh;
-  padding: .8rem;
+  padding: 0.8rem;
   display: grid;
   place-items: center;
   @media (max-width: 806px) {
     margin: 10px 1rem;
   }
-
 }

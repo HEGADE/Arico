@@ -2,12 +2,19 @@
   --radius: 0.4rem;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 @font-face {
   font-family: monsterMedium;
   src: url("../fonts/Montserrat/Montserrat-Medium.ttf");
 }
 
 .article_container {
+  cursor: pointer;
+  padding: 1rem;
   margin: 50px auto;
   max-width: 85%;
   display: -ms-grid;
@@ -15,20 +22,24 @@
   gap: 2rem;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-auto-rows: 320px;
+  grid-auto-rows: auto;
 }
 
 @media (max-width: 900px) {
   .article_container {
-    grid-auto-rows: 370px;
+    max-width: 95%;
+    grid-auto-rows: -webkit-max-content;
+    grid-auto-rows: max-content;
   }
 }
 
 .article_container .card_body {
   color: white;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding-bottom: .4rem;
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
 }
@@ -37,7 +48,7 @@
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
   width: 100%;
-  height: 50%;
+  height: 40%;
 }
 
 .article_container .card_body .card_image img {
@@ -73,7 +84,6 @@
 
 .article_container .card_body .author_share {
   font-family: monsterMedium;
-  margin-top: 0.9rem;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -84,6 +94,7 @@
 }
 
 .article_container .card_body .author_share .author {
+  margin-top: 1rem;
   border-radius: 0.1rem;
   margin-left: 1rem;
   padding: 0.2rem 0.4rem;
@@ -91,6 +102,7 @@
 }
 
 .article_container .card_body .author_share .shareButton {
+  margin-top: 1rem;
   margin-right: 1rem;
 }
 
@@ -128,7 +140,7 @@
 
 @media (max-width: 806px) {
   .login_container {
-    margin: 16vh 1rem;
+    margin: 14vh 1rem;
   }
 }
 
