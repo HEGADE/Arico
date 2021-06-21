@@ -39,7 +39,7 @@ a {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  padding-bottom: .4rem;
+  padding-bottom: 0.4rem;
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
 }
@@ -94,11 +94,13 @@ a {
 }
 
 .article_container .card_body .author_share .author {
+  border-radius: 1000px;
   margin-top: 1rem;
-  border-radius: 0.1rem;
+  font-size: small;
   margin-left: 1rem;
-  padding: 0.2rem 0.4rem;
+  padding: 0.4rem 0.6rem;
   background: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .article_container .card_body .author_share .shareButton {
@@ -276,10 +278,10 @@ a {
 .custom_msg {
   color: white;
   font-family: monsterMedium;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   margin: 10px auto;
   max-width: 75vh;
-  padding: .8rem;
+  padding: 0.8rem;
   display: -ms-grid;
   display: grid;
   place-items: center;

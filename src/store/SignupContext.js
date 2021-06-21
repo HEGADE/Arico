@@ -9,9 +9,11 @@ export const SignupContext = ({ children }) => {
   const [isLog, setIsLogg] = useState(false);
   const [loading, setLoading] = useState(false);
   const [token, setToken] = useState("");
+
   useEffect(() => {
     isAuthenticated();
   }, []);
+  
   const signup = async (username, name, email, password, cPassword) => {
     if (password !== cPassword)
       return { msg: "passwords are not matching", token };

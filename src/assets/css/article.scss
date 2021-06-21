@@ -74,11 +74,14 @@ a {
       display: flex;
       justify-content: space-between;
       .author {
+        border-radius: 1000px;
+
         margin-top: 1rem;
-        border-radius: 0.1rem;
+        font-size: small;
         margin-left: 1rem;
-        padding: 0.2rem 0.4rem;
+        padding: 0.4rem 0.6rem;
         background: rgba(0, 0, 0, 0.4);
+        color: rgba(255, 255, 255, 0.3);
       }
       .shareButton {
         margin-top: 1rem;

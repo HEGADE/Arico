@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 export const fetchData = async () => {
   let _token = LocalStorage.getItem();
   config.headers["auth"] = _token;
-  let data = await axios.get("http://localhost:8000/api", config);
+  let data = await axios.get("http://localhost:8000/api?page=1", config);
   if (data.data?.code === -1) {
     console.log("not authorized");
   }

@@ -1,6 +1,7 @@
 import React from "react";
 
-const Heading = () => {
+const Heading = ({title}) => {
+  document.title = title
   return (
     <>
       <div className="heading_arico">
