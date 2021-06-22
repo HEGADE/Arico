@@ -1,34 +1,35 @@
 const { Article } = require("../../db/schema");
 const showArticle = async (req, res, next) => {
-  let Limit = parseInt(req.query?.limit);
+  let Limit = 6;
   let page = parseInt(req.query?.page);
   let searchQuery = req.query?.search;
 
-  let startIndex = (page - 1) * Limit;
+  let startIndex = (page - 1) * 6;
   let article = null;
-  let searchAble={}
-
-
+  let searchAble = {};
 
   try {
     article = await Article.aggregate([
       {
-        $project:{
-          title:1,
-          user:1,
-          article:{$substr:["$article",0,120]}
-        }
-      }
-      
+        $project: {
+          title: 1,
+          user: 1,
+          article: { $substr: ["$article", 0, 120] },
+        },
+      },
     ])
-      .limit(Limit || 6)
+
       .skip(startIndex || 0)
-      .sort("createdDate");
+      .limit(Limit)
+      .sort("createdDate")
+      .exec();
   } catch (e) {
     return res.json({ msg: "Some Error occurred" });
   }
   res.json(article);
 };
+
+
 const readMoreArticle = async (req, res) => {
   let articleId = req.params.id;
   let articles = null;
