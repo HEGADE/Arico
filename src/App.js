@@ -29,7 +29,7 @@ function App() {
             <Route exact path="/terms" component={Terms} />
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Signup" component={Signup} />
-            <Route exact path="/readmore" component={ReadMore} />
+            <Route exact path="/readmore/:id" component={ReadMore} />
           </Switch>
         </Suspense>
       </Router>

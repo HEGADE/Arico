@@ -70,6 +70,21 @@ export const SignupContext = ({ children }) => {
       setLoading(false);
     }
   };
+  const setAuth=(data)=>{
+    if (data.data?.code === -1) {
+      setIsLogg(false);
+      setLoading(false);
+    }
+    if (data.data.article) {
+        setLoading(false);
+        setIsLogg(true);
+
+        // setArticles(data.data);
+
+        
+        
+    }
+  }
 
   return (
     <authC.Provider
@@ -82,6 +97,7 @@ export const SignupContext = ({ children }) => {
         loading,
         isAuthenticated,
         setLoading,
+        setAuth
       }}
     >
       {children}

@@ -12,7 +12,7 @@ const Articles = () => {
   useEffect(() => {
     setIsLogg(true);
     setLoading(true);
-    fetchData()
+    fetchData({page:1})
       .then((data) => {
         if (data.data?.code === -1) {
           setIsLogg(false);
@@ -25,7 +25,6 @@ const Articles = () => {
         }
 
         setLoading(false);
-
       })
       .catch((e) => {
         alert("Slow network detected..,pls try again later");

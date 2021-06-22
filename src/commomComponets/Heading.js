@@ -1,6 +1,6 @@
 import React from "react";
 
-const Heading = ({title}) => {
+const Heading = ({title="Arico,place where you publish your articles"}) => {
   document.title = title
   return (
     <>

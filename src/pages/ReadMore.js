@@ -1,34 +1,56 @@
-import React from 'react'
-import Heading from "../commomComponets/Heading"
+import React, { useEffect, useState, useContext } from "react";
+import Heading from "../commomComponets/Heading";
+import { useParams } from "react-router";
+import { Redirect } from "react-router-dom";
+import ShareOutlinedIcon from "@material-ui/icons/ShareOutlined";
+
+import { fetchData } from "../helper/fetchData";
+import Readmore from "../components/ReadMore";
+import { authC } from "../store/SignupContext";
+
+import Loader from "../commomComponets/Loader";
+
 export const ReadMore = () => {
-    return (
-        <>
-        <Heading/>
-            <div className="read_more">
+  let { id } = useParams();
 
-                <div className="read_more_heading">
-                    <h1>Java script and python what is the similarities between them</h1>
-                </div>
-             <div className="article_image">
-                 <img src="logo192.png" alt="article logo" />
-             </div>
-                <div className="read_more_content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. A maxime culpa ipsa error, temporibus pariatur perspiciatis nisi repellendus cupiditate necessitatibus! Quam alias porro sunt ut ab, necessitatibus suscipit earum repellat aperiam atque voluptatibus perspiciatis, eaque ea, facilis omnis dicta consequuntur.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. A maxime culpa ipsa error, temporibus pariatur perspiciatis nisi repellendus cupiditate necessitatibus! Quam alias porro sunt ut ab, necessitatibus suscipit earum repellat aperiam atque voluptatibus perspiciatis, eaque ea, facilis omnis dicta consequuntur.
-                </div>
-                <div className="play_ground">
+  let { isLog, setIsLogg, loading, setLoading, setAuth } = useContext(authC);
+  let [articles, setArticles] = useState({});
+  useEffect(() => {
+    setIsLogg(true);
+    setLoading(true);
+    fetchData({ id: id })
+      .then((data) => {
+        setAuth(data);
+        setArticles(data.data);
 
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, tenetur quia iure quod quam sed sequi vero non commodi tempore nulla? Accusamus, nam! Et, incidunt. Autem nisi assumenda neque sequi?
-                </div>
-                <div className="play_ground">
+        setLoading(false);
+      })
+      .catch((e) => {
+        alert("Slow network detected..,pls try again later");
+      });
+  }, []);
+  if (loading) return <Loader />;
+  // if (!isLog) return <Redirect to="/" />;
+  return (
+    <>
+      <Heading />
+      <div className="read_more">
+        <Readmore heading={articles.title} content={articles.article} />
+      </div>
+      <div className="shareButtonMore">
+      <div>
 
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, tenetur quia iure quod quam sed sequi vero non commodi tempore nulla? Accusamus, nam! Et, incidunt. Autem nisi assumenda neque sequi?
-                </div>
-                <div className="read_more_content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. A maxime culpa ipsa error, temporibus pariatur perspiciatis nisi repellendus cupiditate necessitatibus! Quam alias porro sunt ut ab, necessitatibus suscipit earum repellat aperiam atque voluptatibus perspiciatis, eaque ea, facilis omnis dicta consequuntur.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. A maxime culpa ipsa error, temporibus pariatur perspiciatis nisi repellendus cupiditate necessitatibus! Quam alias porro sunt ut ab, necessitatibus suscipit earum repellat aperiam atque voluptatibus perspiciatis, eaque ea, facilis omnis dicta consequuntur.
-                </div>
-            </div>
-        </>
-    )
-}
+          <ShareOutlinedIcon />
+         
+      </div>
+      <div>
+
+          <ShareOutlinedIcon />
+         
+      </div>
+   
+   
+      </div>
+    </>
+  );
+};

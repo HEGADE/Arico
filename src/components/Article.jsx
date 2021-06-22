@@ -30,13 +30,14 @@ const Article = ({
             alert("sharing capability  is not supported by this browser");
           });
       }
+      else alert("Sorry sharing capability  is not supported by this browser!")
     
   };
 
   return (
     <>
       <div className="card_body" style={bg}>
-        <Link to={`/${goto}`}>
+        <Link to={`readmore/${goto}`}>
           <div className="card_image">
             <img src="logo192.png" alt="article_image" />
           </div>
