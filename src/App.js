@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import CircularIndeterminate from "./commomComponets/Loader";
 import { Route, Switch, BrowserRouter as Router, Link } from "react-router-dom";
+import Notfound from "./pages/NotFound"
 import { ReadMore } from "./pages/ReadMore";
 const Articles = lazy(() => {
   return import("./pages/Articles");
@@ -30,6 +31,9 @@ function App() {
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Signup" component={Signup} />
             <Route exact path="/readmore/:id" component={ReadMore} />
+            <Route exact path="/*" >
+            <Notfound/>
+            </Route>
           </Switch>
         </Suspense>
       </Router>

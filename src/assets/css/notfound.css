@@ -1,0 +1,9 @@
+.not_page {
+  font-family: monsterMedium;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  color: white;
+}
+/*# sourceMappingURL=notfound.css.map */
