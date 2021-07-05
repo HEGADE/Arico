@@ -32,6 +32,7 @@ const showArticle = async (req, res, next) => {
 
 const readMoreArticle = async (req, res) => {
   let articleId = req.params.id;
+  console.log(articleId);
   let articles = null;
   try {
     articles = await Article.findOne({ _id: articleId });

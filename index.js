@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors=require("cors")
+const helmet=require('helmet')
 const route = require("./api/routes/mainRoute");
 const app = express();
 
@@ -9,6 +10,7 @@ let port = process.env.PORT || 8000;
 // Express middleware..>
 app.use(express.json());
 app.use(cors());
+app.use(helmet())
 
 // Main api route..>
 app.use("/api", route);
