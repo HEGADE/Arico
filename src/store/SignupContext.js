@@ -73,7 +73,6 @@ export const SignupContext = ({ children }) => {
   const setAuth=(data)=>{
     if (data.data?.code === -1) {
       setIsLogg(false);
-      setLoading(false);
     }
     if (data.data.article) {
         setLoading(false);

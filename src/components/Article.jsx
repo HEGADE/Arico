@@ -2,16 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
 
-const Article = ({
-  img,
-  user,
-  heading,
-  articleContent,
-  determineColor,
-  goto,
-}) => {
+const Article = (
+ prop
+) => {
+  console.log(prop._id)
   const bg = {
-    background: `linear-gradient(193deg,  ${determineColor},22%, #304569)`,
+    background: `linear-gradient(193deg,  ${prop.determineColor},22%, #304569)`,
   };
   const share = async (e) => {
  
@@ -37,20 +33,20 @@ const Article = ({
   return (
     <>
       <div className="card_body" style={bg}>
-        <Link to={`readmore/${goto}`}>
+        <Link to={`readmore/${prop._id}`}>
           <div className="card_image">
             <img src="logo192.png" alt="article_image" />
           </div>
           <div className="article_heading">
-            <h5>{heading}</h5>
+            <h5>{prop.title}</h5>
           </div>
           <div className="article_content">
-            <p>{articleContent}...</p>
+            <p>{prop.article}...</p>
           </div>
         </Link>
         <div className="author_share">
-          <small className="author">{user}</small>
-          <small className="shareButton" id={goto} title={heading}  onClick={share}>
+          <small className="author">{prop.user}</small>
+          <small className="shareButton" id={prop._id} title={prop.title}  onClick={share}>
      <ShareOutlinedIcon />
           </small>
         </div>

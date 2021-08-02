@@ -3,7 +3,7 @@ import ShareOutlinedIcon from "@material-ui/icons/ShareOutlined";
 
 const ReadMore = ({ heading, content }) => {
   return (
-    <>
+    <>  
       <div className="read_more_heading">
         <h1>{heading}</h1>
       </div>

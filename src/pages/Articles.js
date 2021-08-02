@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import {Meta} from "../Meta"
 import { Redirect } from "react-router-dom";
 import Article from "../components/Article";
 import Heading from "../commomComponets/Heading";
@@ -12,22 +13,21 @@ const Articles = () => {
   useEffect(() => {
     setIsLogg(true);
     setLoading(true);
-    fetchData({page:1})
+    fetchData({ page: 1 })
       .then((data) => {
         if (data.data?.code === -1) {
           setIsLogg(false);
-          setLoading(false);
-        }
-        if (data.data[0]?.article) {
+        } else {
           setIsLogg(true);
-          setLoading(false);
           setArticles((pre) => [...pre, ...data?.data]);
         }
-
         setLoading(false);
       })
       .catch((e) => {
         alert("Slow network detected..,pls try again later");
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
   if (loading) return <Loader />;
@@ -39,12 +39,13 @@ const Articles = () => {
         {articles.map((ele, index) => {
           return (
             <Article
-              goto={ele._id}
-              determineColor="green"
-              heading={ele.title}
-              articleContent={ele.article}
-              user={ele.user}
-              key={index}
+            {
+
+              ...ele
+          
+            
+            }
+            determineColor="green"
             />
           );
         })}
