@@ -2,14 +2,16 @@ const { User, Article } = require("../db/schema");
 
 class ProfileHandler {
   async showProfile(req, res) {
-    let followers, following, userName, name, articleCount;
+    let followers, following, userName, name, articleCount,pic;
     const userData = await User.findOne({ userName: req.user });
     articleCount = await Article.countDocuments({ user: req.user }).exec();
     following = userData.following.length;
     followers = userData.followers.length;
     name = userData.name;
     userName = userData.userName;
-    res.json({ followers, name, following, userName, articleCount });
+    pic=userData.pic
+    
+    res.json({ followers, name, following, userName, articleCount,pic });
   }
   async update(req, res) {
     console.log(req.file);

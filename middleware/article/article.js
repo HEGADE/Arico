@@ -29,7 +29,6 @@ const showArticle = async (req, res, next) => {
   res.json(article);
 };
 
-
 const readMoreArticle = async (req, res) => {
   let articleId = req.params.id;
   console.log(articleId);

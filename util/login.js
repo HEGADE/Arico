@@ -1,7 +1,6 @@
-const {User:Article }= require("../db/schema");
+const { User: Article } = require("../db/schema");
 const bcrypt = require("bcryptjs");
 const _tokenCreator = require("../auth/authHelper/_tokenCreator");
-
 const _userChecker = require("../auth/authHelper/_userChecker");
 module.exports = async (req, res, next) => {
   user = await _userChecker(req.body.username);
