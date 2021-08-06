@@ -1,7 +1,6 @@
 import axios from "axios";
 import { config } from "../config";
 import { LocalStorage } from "../helper/localStorage";
-import { useState, useEffect } from "react";
 export const fetchData = async ({ page, id }) => {
   let _token = LocalStorage.getItem();
   config.headers["auth"] = _token;
