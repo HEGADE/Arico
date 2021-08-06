@@ -3,7 +3,7 @@ import React from 'react'
 const Profile = () => {
     return (
         <>
-            <h1>my profile</h1>
+            <h1 style={{color:"red"}}>my profile</h1>
         </>
     )
 }

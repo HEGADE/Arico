@@ -1,6 +1,6 @@
 import React from "react";
 import ArcioHeading from "../commomComponets/Heading";
-import "../assets/css/auth.css";
+import "../assets/css/auth.scss";
 import { Link } from "react-router-dom";
 const AuthenticatorPage = () => {
   return (

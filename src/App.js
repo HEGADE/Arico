@@ -18,6 +18,9 @@ const Terms = lazy(() => {
 const AuthPage = lazy(() => {
   return import("./pages/AuthenticatorPage");
 });
+const Profile = lazy(() => {
+  return import("./pages/Profile");
+});
 
 function App() {
   return (
@@ -30,6 +33,7 @@ function App() {
             <Route exact path="/terms" component={Terms} />
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Signup" component={Signup} />
+            <Route exact path="/profile" component={Profile} />
             <Route exact path="/readmore/:id" component={ReadMore} />
             <Route exact path="/*" >
             <Notfound/>
