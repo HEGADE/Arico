@@ -13,7 +13,7 @@ export const SignupContext = ({ children }) => {
   useEffect(() => {
     isAuthenticated();
   }, []);
-  
+
   const signup = async (username, name, email, password, cPassword) => {
     if (password !== cPassword)
       return { msg: "passwords are not matching", token };
@@ -62,28 +62,23 @@ export const SignupContext = ({ children }) => {
         "http://localhost:8000/api/isauthenticated/",
         config
       );
-      setLoading(false);
       if (data.data?.code === -1) setIsLogg(false);
       else setIsLogg(true);
     } catch (e) {
       setIsLogg(false);
+    } finally {
       setLoading(false);
     }
   };
-  const setAuth=(data)=>{
+  const setAuth = (data) => {
     if (data.data?.code === -1) {
       setIsLogg(false);
     }
     if (data.data.article) {
-        setLoading(false);
-        setIsLogg(true);
-
-        // setArticles(data.data);
-
-        
-        
+      setLoading(false);
+      setIsLogg(true);
     }
-  }
+  };
 
   return (
     <authC.Provider
@@ -96,7 +91,7 @@ export const SignupContext = ({ children }) => {
         loading,
         isAuthenticated,
         setLoading,
-        setAuth
+        setAuth,
       }}
     >
       {children}
