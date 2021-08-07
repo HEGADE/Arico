@@ -3,6 +3,7 @@ const postingFeature = require("../../middleware/postingFeature");
 const { reqValidator, reqValidatorLogin } = require("../../middleware/reqValidator");
 const { showArticle, readMoreArticle } = require("../../middleware/article/article")
 const auth = require("../../auth/auth");
+const thumbnails=require("../../uploader")
 const userCreation = require("../../util/userCreation");
 const login = require("../../util/login");
 const profile = require("../../profile/profile")
@@ -17,6 +18,7 @@ const storage = multer.diskStorage({
   }
 })
 const upload = multer({ storage: storage })
+const thumbnailUpload = multer({ storage: thumbnails })
 
 const msg = {
   msg: "too many request"
@@ -38,7 +40,7 @@ route.get("/userProfile/:id", auth, profile.showProfileUser, (req, res) => {
 });
 
 // Route for posting (creating) article..>
-route.put("/", auth, postingFeature, (req, res) => {
+route.put("/", auth, thumbnailUpload.single("pic"),postingFeature, (req, res) => {
 
   res.json({ msg: "Your Articles pushed 🤞✌" });
 });

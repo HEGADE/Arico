@@ -3,9 +3,11 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const route = require("./api/routes/mainRoute");
+const path = require('path')
 const app = express();
 
 let port = process.env.PORT || 8000;
+ 
 
 // Express middleware..>
 app.use(express.json());
@@ -23,6 +25,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/static", express.static(__dirname + "\\uploads"));
+app.use("/thumbnail", express.static(__dirname + "\\thumbnails"));
 
 app.listen(
   8000,
