@@ -15,7 +15,7 @@ const AuthenticatorPage = () => {
       <div className="auth_container">
         <Link to="/login">
           <div className="login">Login</div>
-        </Link>{" "}
+        </Link>
         <Link to="/Signup">
           <div className="signup">Signup</div>
         </Link>

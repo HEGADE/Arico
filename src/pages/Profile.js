@@ -20,7 +20,7 @@ const Profile = () => {
       </Suspense>
     </>
   );
-  //    return <Redirect to="auth" />;
+
 };
 
 export default Profile;
