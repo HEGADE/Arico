@@ -23,6 +23,7 @@
 
   .article_image {
     margin: 1rem;
+   
     width: 80%;
     height: 50vh;
     @media (max-width: 950px) {
@@ -30,6 +31,8 @@
     }
 
     img {
+      object-fit: cover;
+      
       width: 100%;
       max-height: 99%;
       border-radius: 0.4rem;

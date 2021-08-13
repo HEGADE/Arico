@@ -34,7 +34,7 @@ export const ReadMore = () => {
     <>
       <Heading title={articles.title}/>
       <div className="read_more">
-        <Readmore heading={articles.title} content={articles.article} />
+        <Readmore heading={articles.title} content={articles.article} pic={articles.pic} />
       </div>
       <div className="shareButtonMore">
         <div>

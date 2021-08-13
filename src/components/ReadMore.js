@@ -1,14 +1,14 @@
 import React from "react";
 import ShareOutlinedIcon from "@material-ui/icons/ShareOutlined";
 
-const ReadMore = ({ heading, content }) => {
+const ReadMore = ({ heading, content,pic }) => {
   return (
     <>  
       <div className="read_more_heading">
         <h1>{heading}</h1>
       </div>
       <div className="article_image">
-        <img src="/logo192.png" alt="article logo" />
+        <img src={`http://localhost:8000/${pic}`} loading="lazy" alt="article logo" />
       </div>
       <div className="read_more_content">{content}</div>
       <div className="play_ground">

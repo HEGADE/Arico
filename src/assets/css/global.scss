@@ -18,8 +18,28 @@ body{
     color:white;
     font-family: monsterFont;
     border-bottom: 2px solid rgba(224, 255, 255, 0.246);
-    margin: 1.4rem;
+    margin: 1.2rem;
     padding-bottom: .8rem;
+    display: flex;
+    justify-content: space-between;
+    .menu{
+        margin-top: .4rem;
+        margin-right: 1rem;
+    }
+    a{ 
+
+        border: 1.8px solid yellow;
+        font-size: 1rem;
+        margin: .5rem .8rem;
+        background: rgba(71, 160, 255, 0.125);
+        padding: .3rem .5rem;
+        border-radius: 1000px;
+        transition: all 500ms linear;
+        &:hover{
+            background-color: rgb(1, 102, 68);
+            color: rgb(255, 255, 255);
+        }
+    }
     h2{
         font-size: 1.5rem;
         font-weight: lighter;

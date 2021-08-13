@@ -4,7 +4,7 @@ import ShareOutlinedIcon from "@material-ui/icons/ShareOutlined";
 
 const Article = (prop) => {
   const bg = {
-    background: `linear-gradient(193deg,  ${prop.determineColor},22%, #304569)`,
+    background: `linear-gradient(40deg,  ${prop.determineColor},22%, #304569)`,
   };
   const share = async (e) => {
     if (navigator.canShare) {
@@ -29,7 +29,7 @@ const Article = (prop) => {
       <div className="card_body" style={bg}>
         <Link to={`readmore/${prop._id}`}>
           <div className="card_image">
-            <img src="logo192.png" alt="article_image" />
+            <img src={`http://localhost:8000/${prop.pic}`} loading="lazy" height="250" alt="article_image" />
           </div>
           <div className="article_heading">
             <h5>{prop.title}</h5>

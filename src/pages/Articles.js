@@ -34,7 +34,7 @@ const Articles = () => {
       <Heading />
       <div className="article_container">
         {articles.map((ele, index) => {
-          return <Article {...ele} key={index} determineColor="green" />;
+          return <Article {...ele} key={index} determineColor={ele.color} />;
         })}
       </div>
     </>
@@ -42,4 +42,3 @@ const Articles = () => {
 };
 
 export default Articles;
-// writing algorithm that ignores blackish and whitish color (40 and 220)
