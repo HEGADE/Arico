@@ -26,7 +26,7 @@ const Article = (prop) => {
 
   return (
     <>
-      <div className="card_body" style={bg}>
+      <div className="card_body" style={bg} >
         <Link to={`readmore/${prop._id}`}>
           <div className="card_image">
             <img src={`http://localhost:8000/${prop.pic}`} loading="lazy" height="250" alt="article_image" />

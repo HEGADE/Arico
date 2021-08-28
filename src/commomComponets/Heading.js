@@ -29,6 +29,12 @@ const Heading = ({ title = "Arico,place where you publish your articles" }) => {
                 Logout
               </Link>
             ) : null}
+
+            {isLog ? (
+              <Link to="/profile">Profile</Link>
+            ) : null} 
+         
+
           </div>
         </div>
       </div>

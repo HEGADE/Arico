@@ -24,7 +24,12 @@ a {
     grid-auto-rows: max-content;
   }
 
-  .card_body {
+  .card_body {  
+
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(rgb(0, 123, 255));
+    backdrop-filter: blur(200px);
+    // border: solid 2px rgba(255, 255, 255, 0.1);
     transition: all 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
     color: white;
     width: 100%;
@@ -199,7 +204,7 @@ a {
 }
 .custom_msg {
   color: white;
-
+cursor: pointer;
   font-family: monsterMedium;
   border-radius: 0.2rem;
   margin: 10px auto;
@@ -210,4 +215,22 @@ a {
   @media (max-width: 806px) {
     margin: 10px 1rem;
   }
+}
+.load_more{
+  border: none;
+  border-radius: .2rem;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+  color: white;
+  background-color: hsl(246, 80%, 5%);
+  text-align: center;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  max-width: 80vh;
+  font-family: monsterMedium;
+  display: block;
+  margin: auto;
+  text-transform: capitalize;
+  border: 1px solid rgba(0, 140, 255, 0.6);
+  margin-bottom:1rem ;
+  
 }
