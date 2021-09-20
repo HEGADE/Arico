@@ -20,6 +20,7 @@ const Articles = () => {
   return (
     <>
       <Heading />
+      <SearchBox placeHolder="search"/>
       <div className="article_container">
         {articles.map((ele, index) => {
           return (
@@ -45,3 +46,13 @@ const Articles = () => {
 };
 
 export default Articles;
+
+const SearchBox=({placeHolder})=>{
+  return (
+    <>
+    <div className="search_div">
+      <input type="text"  placeholder={placeHolder}/>
+    </div>
+    </>
+  )
+}
