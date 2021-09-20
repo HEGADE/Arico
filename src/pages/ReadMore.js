@@ -6,6 +6,7 @@ import { fetchData } from "../helper/fetchData";
 import Readmore from "../components/ReadMore";
 import { authC } from "../store/SignupContext";
 import Loader from "../commomComponets/Loader";
+import {readMoreShare} from "../helper/share"
 
 export const ReadMore = () => {
   let { id } = useParams();
@@ -20,6 +21,7 @@ export const ReadMore = () => {
         let data = await fetchData({ id });
         setAuth(data);
         setArticles(data.data);
+        console.log(data.data)
       } catch (e) {
         alert("Slow network detected..,pls try again later");
       } finally {
@@ -35,13 +37,11 @@ export const ReadMore = () => {
       <div className="read_more">
         <Readmore {...articles} />
       </div>
-      <div className="shareButtonMore">
-        <div>
+      <div className="shareButtonMore" >
+        <div onClick={()=>readMoreShare(articles.title,articles._id)}>
           <ShareOutlinedIcon />
         </div>
-        <div>
-          <ShareOutlinedIcon />
-        </div>
+     
       </div>
     </>
   );

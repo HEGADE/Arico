@@ -1,11 +1,20 @@
 import React from "react";
-import ShareOutlinedIcon from "@material-ui/icons/ShareOutlined";
+import Moment from "react-moment";
 
-const ReadMore = ({ title, article,pic }) => {
+const ReadMore = ({ title, article,pic,createdDate ,user}) => {
+  
   return (
     <>  
       <div className="read_more_heading">
+  
         <h1>{title}</h1>
+        <div className="created_at">
+          
+        <Moment fromNow>{createdDate}</Moment>
+      </div>
+      <div className="author">
+        {user}
+      </div>
       </div>
       <div className="article_image">
         <img src={`http://localhost:8000/${pic}`} loading="lazy" alt="article logo" />

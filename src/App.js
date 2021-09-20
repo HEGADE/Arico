@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import CircularIndeterminate from "./commomComponets/Loader";
-import { Route, Switch, BrowserRouter as Router, Link } from "react-router-dom";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Notfound from "./pages/NotFound"
 import { ReadMore } from "./pages/ReadMore";
 const Articles = lazy(() => {
