@@ -1,34 +1,39 @@
 const route = require("express").Router();
 const postingFeature = require("../../middleware/postingFeature");
-const { reqValidator, reqValidatorLogin } = require("../../middleware/reqValidator");
-const { showArticle, readMoreArticle } = require("../../middleware/article/article")
+const {
+  reqValidator,
+  reqValidatorLogin,
+} = require("../../middleware/reqValidator");
+const {
+  showArticle,
+  readMoreArticle,
+} = require("../../middleware/article/article");
 const auth = require("../../auth/auth");
-const thumbnails=require("../../uploader")
+const thumbnails = require("../../uploader");
 const userCreation = require("../../util/userCreation");
 const login = require("../../util/login");
-const profile = require("../../profile/profile")
-const rateLimit = require("express-rate-limit")
-const multer = require("multer")
+const profile = require("../../profile/profile");
+const rateLimit = require("express-rate-limit");
+const multer = require("multer");
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "./uploads/")
+    cb(null, "./uploads/");
   },
   filename: function (req, file, cb) {
-    cb(null, new Date().getMilliseconds() + Math.random() + file.originalname)
-  }
-})
-const upload = multer({ storage: storage })
-const thumbnailUpload = multer({ storage: thumbnails })
+    cb(null, new Date().getMilliseconds() + Math.random() + file.originalname);
+  },
+});
+const upload = multer({ storage: storage });
+const thumbnailUpload = multer({ storage: thumbnails });
 
 const msg = {
-  msg: "too many request"
-}
+  msg: "too many request",
+};
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   message: msg,
   max: 5,
-
-})
+});
 // Routes for displaying articles..>
 route.get("/", auth, showArticle, (req, res) => {
   res.json({ msg: "Your Articles 🤞✌" });
@@ -40,16 +45,20 @@ route.get("/userProfile/:id", auth, profile.showProfileUser, (req, res) => {
 });
 
 // Route for posting (creating) article..>
-route.put("/", auth, thumbnailUpload.single("pic"),postingFeature, (req, res) => {
-
-  res.json({ msg: "Your Articles pushed 🤞✌" });
-});
+route.put(
+  "/",
+  auth,
+  thumbnailUpload.single("pic"),
+  postingFeature,
+  (req, res) => {
+    res.json({ msg: "Your Articles pushed 🤞✌" });
+  }
+);
 
 // Route for user login..>
 route.post("/login", limiter, reqValidatorLogin, login, (req, res) => {
   res.status(req.code).json({ msg: req.msg, token: req.token || null });
 });
-
 
 //Route for user creation..>
 route.post("/signup", limiter, reqValidator, async (req, res) => {
@@ -71,16 +80,16 @@ route.post("/signup", limiter, reqValidator, async (req, res) => {
 });
 
 //Route for user Profile..>
-route.get("/profile", auth, profile.showProfile)
+route.get("/profile", auth, profile.showProfile);
 
 // Route for profile update..>
-route.put("/profile", auth, upload.single("pic"), profile.update)
+route.put("/profile", auth, upload.single("pic"), profile.update);
 
 // Route for viewing article based on id
-route.get("/article/:id", readMoreArticle)
+route.get("/article/:id", readMoreArticle);
 
-route.get("/isauthenticated", auth,(req,res)=>{
-  res.json({ha:"ha"})
-})
+route.get("/isauthenticated", auth, (req, res) => {
+  res.json({ ha: "ha" });
+});
 
 module.exports = route;

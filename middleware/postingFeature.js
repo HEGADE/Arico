@@ -5,12 +5,11 @@ const path = require("path");
 let randomColor = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
 
 const postArticle = async (req, res, next) => {
-  let username = req.user;
   let colors = await getColors(
     path.join("", `thumbnails/${req.file.filename}`)
   );
   let actualColor = colors.map((color) => color.hex());
-  let color = actualColor[randomColor];
+  let color = actualColor[randomColor]; // picking random color from image
   const { title, article } = req.body;
   try {
     let stat = Article({

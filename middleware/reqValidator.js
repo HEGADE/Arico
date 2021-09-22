@@ -1,5 +1,4 @@
 const reqValidator = (req, res, next) => {
-  console.log("hm");
 
   if (
     req.body.username?.trim().length < 4 ||

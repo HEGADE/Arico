@@ -3,18 +3,22 @@ const showArticle = async (req, res, next) => {
   let Limit = 6;
   let page = parseInt(req.query?.page);
   let searchQuery = req.query?.search;
-
+  let searchString = searchQuery ? searchQuery + "*" : "";
   let startIndex = (page - 1) * 6;
   let article = null;
   let searchAble = {};
-
+  console.log(searchString)
+  let reg = new RegExp(searchString, "g");
   try {
     article = await Article.aggregate([
+      { $match: { $or: [{ title: reg }, { article: reg }] } },
       {
         $project: {
           title: 1,
           user: 1,
           article: { $substr: ["$article", 0, 120] },
+          color: 1,
+          pic: 1,
         },
       },
     ])
@@ -24,6 +28,7 @@ const showArticle = async (req, res, next) => {
       .sort("createdDate")
       .exec();
   } catch (e) {
+    console.log(e);
     return res.json({ msg: "Some Error occurred" });
   }
   res.json(article);
