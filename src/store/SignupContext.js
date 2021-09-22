@@ -65,7 +65,7 @@ export const SignupContext = ({ children }) => {
          if (data.data?.code === -1) setIsLogg(false);
          else setIsLogg(true);
       } catch (e) {
-         setIsLogg(false);// no need but still used 
+         setIsLogg(false); // no need but still used
       } finally {
          setLoading(false);
       }

@@ -1,66 +1,62 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
 }
 @font-face {
-    font-family: monsterFont;
-    src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+   font-family: monsterFont;
+   src: url('../fonts/Montserrat/Montserrat-Regular.ttf');
 }
-:root{
-    --body-bg:#09052c;
+:root {
+   --body-bg: #09052c;
 }
-body{
+body {
+   background: var(--body-bg);
+}
+.heading_arico {
+   color: white;
+   font-family: monsterFont;
+   border-bottom: 2px solid rgba(224, 255, 255, 0.246);
+   margin: 1.2rem;
+   padding-bottom: 0.8rem;
+   display: flex;
+   justify-content: space-between;
+   .menu {
+      margin-top: 0.4rem;
+      margin-right: 1rem;
+   }
+   a {
+      border: 1.8px solid rgba(0, 183, 255, 0.651);
+      font-size: 1rem;
+      margin: 0.5rem 0.8rem;
+      background: rgba(71, 160, 255, 0.125);
+      padding: 0.3rem 0.5rem;
+      border-radius: 1000px;
+      transition: all 500ms linear;
+      &:hover {
+         background-color: rgb(1, 102, 68);
+         color: rgb(255, 255, 255);
+      }
+   }
+   h2 {
+      font-size: 1.5rem;
+      font-weight: lighter;
+   }
+}
+#loader {
+   background-color: rgba(0, 0, 0, 0.4);
+   z-index: 10;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+.wrapper {
+   padding: 0.8rem 1rem;
+   border-radius: 50%;
+   filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.377));
 
-    background: var(--body-bg);
-}
-.heading_arico{
-
-    color:white;
-    font-family: monsterFont;
-    border-bottom: 2px solid rgba(224, 255, 255, 0.246);
-    margin: 1.2rem;
-    padding-bottom: .8rem;
-    display: flex;
-    justify-content: space-between;
-    .menu{
-       
-        margin-top: .4rem;
-        margin-right: 1rem;
-    }
-    a{ 
-
-        border: 1.8px solid rgba(0, 183, 255, 0.651);
-        font-size: 1rem;
-        margin: .5rem .8rem;
-        background: rgba(71, 160, 255, 0.125);
-        padding: .3rem .5rem;
-        border-radius: 1000px;
-        transition: all 500ms linear;
-        &:hover{
-            background-color: rgb(1, 102, 68);
-            color: rgb(255, 255, 255);
-        }
-    }
-    h2{
-        font-size: 1.5rem;
-        font-weight: lighter;
-    }
-}
-#loader{
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-.wrapper{
-padding: .8rem 1rem;
-    border-radius: 50%;
-    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.377));
-
-    width: 70px;
-    height:70px;
-    background-color: rgb(44, 42, 42);
+   width: 70px;
+   height: 70px;
+   background-color: rgb(44, 42, 42);
 }

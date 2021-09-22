@@ -1,5 +1,5 @@
 # Arico ,the arena of articles
-#### This web site that helps you to post  your article in better and tidy manner
+#### This web site  helps you to post  your article in better and tidy manner
 
 
 ## `Go through process`
