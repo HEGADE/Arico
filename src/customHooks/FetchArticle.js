@@ -1,9 +1,8 @@
-import  { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { authC } from '../store/SignupContext';
 import { fetchData } from '../helper/fetchData';
 
 const FetchArticle = (page, search) => {
-   console.log(page, search);
    let [articles, setArticles] = useState([]);
    let { isLog, setIsLogg, loading, setLoading } = useContext(authC);
    let [has, setHas] = useState(true);
